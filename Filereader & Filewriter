@@ -1,0 +1,23 @@
+Read and copy with FileReader and FileWriter
+  
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.Reader;
+import java.io.Writer;
+
+
+public class FileReaderWriterExample {
+  public static void main(String[] args) throws Exception {
+
+
+    Reader r = new FileReader("in.txt");
+    Writer w = new FileWriter("out.txt");
+    int c;
+    while ((c = r.read()) != -1) {
+      System.out.print((char) c);
+      w.write(c);
+    }
+    r.close();
+    w.close();
+  }
+}

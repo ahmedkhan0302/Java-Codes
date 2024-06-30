@@ -92,3 +92,109 @@ OUTPUT:
 *****
  ***
   *
+_____________________________________________________________
+SOURCE CODE:
+package project2;
+                       
+import java.util.Scanner;
+public class Project2 {
+
+    public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+         System.out.print("Enter an integer: ");
+         int num = input.nextInt();
+         
+         int fact=1,i=1;
+         if(i<=num){
+             for(i=1;i<=num;i++){
+                 fact=fact*i;
+             }
+             System.out.println("Factorial is "+fact);
+         }
+         else{
+             System.out.println("Factorial is "+i);
+         }
+         
+         input.close();
+    }
+}
+
+OUTPUT:
+Enter an integer: 4
+Factorial is 24
+
+
+__________________________________________________________
+SOURCE CODE:
+package project2;
+                       
+import java.util.Scanner;
+public class Project2 {
+
+    public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+         System.out.print("Enter an integer: ");
+         int num = input.nextInt();
+         
+         int a,b,i,sum;
+         a=0;
+         b=1;
+         sum=0;
+         i=2;
+         
+         if(num==1){
+             System.out.print(a);
+         }
+         else if(num==2){
+             System.out.print(a+" "+b);
+         }
+         else{
+         System.out.print(a+" "+b);
+         while(i<=num){
+             sum=a+b;
+             System.out.print(" "+sum);
+             a=b;
+             b=sum;
+             i++;
+         }
+         }
+         
+         input.close();
+    }
+}
+
+
+OUTPUT:
+Enter an integer: 6
+0 1 1 2 3 5 8
+
+
+
+
+
+_______________________________________________________________________
+SOURCE CODE:
+package project2;
+                       
+import java.util.Scanner;
+public class Project2 {
+
+    public static void main(String[] args) {
+        int count,i=0;
+        String string;
+        count=args.length;
+        System.out.println("Number of arguments: "+count);
+        while(i<count){
+            string=args[i];
+            i= i+1;
+            System.out.println(i+":"+string);
+        }
+    }
+}
+
+OUTPUT:
+Number of arguments: 4
+1:Hello
+2:How
+3:Are
+4:You

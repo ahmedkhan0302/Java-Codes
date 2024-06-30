@@ -1,0 +1,78 @@
+SOURCE CODE:
+package Single_Level_inheritence_76;
+import java.util.Scanner;
+class student{
+    String name;
+    int Roll_no;
+    int Pr_no;
+    String dept;
+    void get_Std_Details(String A, int B, int C,String D){
+        this.name=A;
+        this.Roll_no=B;
+        this.Pr_no=C;
+        this.dept=D;
+    }
+    
+    void Show_Details(){
+        System.out.println("Name:"+name+" "+"Roll No."+Roll_no+" "+"Pr No."+Pr_no+" "+"Department:"+dept);
+    }
+}
+class test extends student{
+    int Science, Maths,English;
+    void get_Marks(int A,int B,int C){
+        this.Science=A;
+        this.Maths=B;
+        this.English=C;
+    }  
+    void Show_AllDetails(){
+        Show_Details();
+         System.out.println("Science:"+Science+" "+"Maths:"+Maths+" "+"English:"+English);
+    }    }
+public class Single_Level_Inheritence_76 {
+    public static void main(String args[]) {
+        Scanner Sc=new Scanner(System.in);
+             String Name,Dept;
+        int Roll_no,Pr_no, Sci,Maths,Eng;
+         System.out.println("Enter Your Name:");
+   Name = Sc.nextLine();
+    System.out.println("Enter the Roll No.:");
+    Roll_no = Sc.nextInt();
+    System.out.println("Enter the Pr No.:");
+   Pr_no = Sc.nextInt();
+   System.out.println("Enter Your Department:");
+   Dept = Sc.next();
+     System.out.println("Enter the Science Marks:");
+    Sci = Sc.nextInt();
+     System.out.println("Enter the Maths Marks:");
+     Maths = Sc.nextInt();
+      System.out.println("Enter the English Marks:");
+       Eng = Sc.nextInt();
+test Std = new test();
+Std.get_Std_Details(Name,Roll_no,Pr_no, Dept);
+Std.get_Marks(Sci,Maths,Eng);
+Std.Show_AllDetails();
+}}
+
+OUTPUT:
+Enter Your Name:
+Raj
+Enter the Roll No.:
+34
+Enter the Pr No.:
+202208676
+Enter Your Department:
+IT
+Enter the Science Marks:
+65
+Enter the Maths Marks:
+72
+Enter the English Marks:
+80
+Name:Raj 
+Roll No.76 
+Pr No.202208676 
+Department:IT
+Science:94
+Maths:36
+English:77
+

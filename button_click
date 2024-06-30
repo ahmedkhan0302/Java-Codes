@@ -1,0 +1,51 @@
+SOURCE CODE FOR BUTTON CLICK:
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class EventDelegationExample2 extends JFrame {
+    private JButton button1;
+    private JButton button2;
+    private JLabel label;
+    
+    public EventDelegationExample2() {
+        super("Event Delegation Example");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Create the components
+        button1 = new JButton("Button 1");
+        button2 = new JButton("Button 2");
+        label = new JLabel("No button clicked");
+        
+        // Add the components to the frame
+        JPanel panel = new JPanel();
+        panel.add(button1);
+        panel.add(button2);
+        panel.add(label);
+        add(panel);
+        
+        // Register the event listener
+        ActionListener listener = new ButtonClickListener();
+        button1.addActionListener(listener);
+        button2.addActionListener(listener);
+        
+        // Set the size and show the frame
+        setSize(300, 100);
+        setVisible(true);
+    }
+    
+    private class ButtonClickListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == button1) {
+                label.setText("Button 1 clicked");
+            } else if (e.getSource() == button2) {
+                label.setText("Button 2 clicked");
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        EventDelegationExample2 example = new EventDelegationExample2();
+    }
+}
+

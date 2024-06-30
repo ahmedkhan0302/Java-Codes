@@ -1,0 +1,53 @@
+SOURCE CODE:
+package project3;
+import java.util.Scanner;
+
+public class Project3 {
+
+    public static void main(String[] args) {
+        Scanner inputScanner = new Scanner(System.in);
+        int all;
+
+        System.out.print("Enter the total number of students: ");
+        all = inputScanner.nextInt();
+
+        int[] marksall = new int[all];
+
+        for (int i = 0; i < all; i++) {
+            System.out.print("Enter marks for student " + (i + 1) + ": ");
+            marksall[i] = inputScanner.nextInt();
+        }
+
+        int Count1 = 0, Count2 = 0, Count3 = 0, Count4 = 0;
+
+        for (int marks : marksall) {
+            if (marks >= 81 && marks <= 100) {
+                Count1++;
+            } else if (marks >= 61 && marks <= 80) {
+                Count2++;
+            } else if (marks >= 41 && marks <= 60) {
+                Count3++;
+            } else if (marks >= 0 && marks <= 40) {
+                Count4++;
+            }
+        }
+
+        System.out.println("Number of students with marks (81-100): " + Count1);
+        System.out.println("Number of students with marks (61-80): " +Count2);
+        System.out.println("Number of students with marks (41-60): " + Count3);
+        System.out.println("Number of students with marks (0-40): " + Count4);
+
+  }
+ }
+
+OUTPUT:
+Enter the total number of students: 5
+Enter marks for student 1: 32
+Enter marks for student 2: 41
+Enter marks for student 3: 75
+Enter marks for student 4: 98
+Enter marks for student 5: 10
+Number of students with marks (81-100): 1
+Number of students with marks (61-80): 1
+Number of students with marks (41-60): 1
+Number of students with marks (0-40): 2

@@ -1,0 +1,55 @@
+Programs to implement packages.
+
+package displayfact:
+
+import myPackage, factorial:
+
+import java.util.Scanner;
+
+public class DisplayFact {
+
+public static void main(String[] args) {
+
+Scanner sc = new Scanner(System.in);
+
+int num;
+
+System.out.println("Enter the number ");
+
+num = sc.nextInt():
+
+factorial obj=new factorial();
+
+obj.calFact(num);
+
+}
+
+}
+
+package myPackage;
+
+public class factorial {
+
+public void calFact(int n){
+
+int f = 1;
+
+for (int i=2; i <= n; i++) {
+
+f = f*i;
+
+}
+
+System.out.println("The factorial of "+n+ " is
+
+"+f);
+
+}
+
+}
+
+Output:
+
+Enter the number
+
+5 The factorial of 5 is 120

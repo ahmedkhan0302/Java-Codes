@@ -1,0 +1,25 @@
+SOURCE CODE:
+package project1;
+
+public class Project1 {
+
+    public static void main(String[] args) {
+                int n=4;
+                int j=0,sum=0;
+                for( int i=1;i<n;i++){
+                    j=j+i;
+                    sum=sum+j;
+                    System.out.println(j);
+                }
+                System.out.println("The Answer is "+sum);
+            
+    }
+    
+}
+
+OUTPUT:
+1
+3
+6
+The Answer is 10
+

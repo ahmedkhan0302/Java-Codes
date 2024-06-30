@@ -1,0 +1,26 @@
+SOURCE CODE:
+package project3;
+import java.util.Scanner;
+
+public class Project3 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int rev=0;
+        int rem;
+        System.out.print("Enter Number: ");
+        int n = input.nextInt();
+        while(n>0)
+        {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+        }
+        System.out.println(rev);
+  }
+ }
+
+OUTPUT:
+Enter Number: 3467
+7643
+

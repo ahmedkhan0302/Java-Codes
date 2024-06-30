@@ -1,0 +1,42 @@
+2) Adding more classes in a package
+CODE:
+package maths_4;
+import package_maths.add;
+import package_maths.sub;
+public class maths_4 {
+ 
+ public static void main(String[] args) {
+ 
+ add code1=new add();
+ code1.display1();
+ 
+ sub code2=new sub();
+ code2.display2();
+ }
+ 
+}
+//Package 1
+package package_maths;
+public class add {
+ int a=5,b=6;
+ int c=a+b;
+public void display1()
+ {
+ System.out.println("The result after addition is " +c);
+ }
+}
+//Package 2
+package package_maths;
+public class sub {
+ int a=20,b=10;
+ int c=a-b;
+public void display2()
+ {
+ System.out.println("The result after substraction is " +c);
+ }
+}
+OUTPUT:
+run:
+The result after addition is 11
+The result after substraction is 10
+BUILD SUCCESSFUL (total time: 0 seconds)

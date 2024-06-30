@@ -1,0 +1,64 @@
+SOURCE CODE:
+package project3;
+import java.util.Scanner;
+
+public class Project3 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter Choice: ");
+        System.out.print("1:Mill\n2:Handloom\nchoice:");
+        int ch = input.nextInt(); 
+        
+        System.out.print("Enter the purchase amount: ");
+        double a = input.nextDouble();
+            double d = 0;
+            switch (ch) {
+            case 1:
+                if (a >= 1 && a <= 100) {
+                    d = 0;
+                } else if (a >= 101 && a <= 200) {
+                    d = 5;
+                } else if (a >= 201 && a <= 300) {
+                    d = 7.5;
+                } else if (a > 300) {
+                    d = 10;
+                } else {
+                    System.out.println("Invalid purchase amount.");
+                    return;
+                }
+                break;
+            case 2:
+                if (a >= 1 && a <= 100) {
+                    d = 5;
+                } else if (a >= 101 && a <= 200) {
+                    d = 7.5;
+                } else if (a >= 201 && a <= 300) {
+                    d = 10;
+                } else if (a > 300) {
+                    d = 15;
+                } else {
+                    System.out.println("Invalid purchase amount.");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Invalid cloth type.");
+                return;
+        }
+        
+        double netAmount = a - (a * d / 100);
+        
+        System.out.println("Net amount to be paid for cloth: " + netAmount);
+
+  }
+ }
+
+OTUPUT:
+Enter Choice: 
+1:Mill
+2:Handloom
+choice:1
+Enter the purchase amount: 238
+Net amount to be paid for cloth: 220.15

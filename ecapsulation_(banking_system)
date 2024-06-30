@@ -1,0 +1,213 @@
+SOURCE CODE:
+package javaapplication103;
+import java.util.Scanner;
+
+class BankAccount {
+    private int accountNumber;
+    private String accountHolderName;
+    private String accountType;
+    private double balance;
+
+    public BankAccount(int accountNumber, String accountHolderName, String accountType, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.accountType = accountType;
+        this.balance = balance;
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void displayAccountDetails() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder Name: " + accountHolderName);
+        System.out.println("Account Type: " + accountType);
+        System.out.println("Balance: $" + balance);
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposit successful. Current balance: $" + balance);
+    }
+
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. Current balance: $" + balance);
+        } else {
+            System.out.println("Insufficient balance. Withdrawal failed.");
+        }
+    }
+}
+
+public class BankingSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of customers: ");
+        int numCustomers = scanner.nextInt();
+
+        BankAccount[] accounts = new BankAccount[numCustomers];
+
+        for (int i = 0; i < numCustomers; i++) {
+            System.out.println("Customer " + (i + 1));
+            System.out.print("Enter account number: ");
+            int accountNumber = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
+            System.out.print("Enter account holder name: ");
+            String accountHolderName = scanner.nextLine();
+            System.out.print("Enter account type: ");
+            String accountType = scanner.nextLine();
+            System.out.print("Enter balance: $");
+            double balance = scanner.nextDouble();
+
+            accounts[i] = new BankAccount(accountNumber, accountHolderName, accountType, balance);
+        }
+
+        boolean exit = false;
+        while (!exit) {
+            System.out.println("\n-- Bank Menu --");
+            System.out.println("1. Display all account details");
+            System.out.println("2. Search by Account number");
+            System.out.println("3. Deposit amount");
+            System.out.println("4. Withdraw amount");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    displayAllAccountDetails(accounts);
+                    break;
+                case 2:
+                    searchByAccountNumber(accounts);
+                    break;
+                case 3:
+                    performDeposit(accounts, scanner);
+                    break;
+                case 4:
+                    performWithdrawal(accounts, scanner);
+                    break;
+                case 5:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+
+        System.out.println("Thank you for using the banking system. Goodbye!");
+        scanner.close();
+    }
+
+    public static void displayAllAccountDetails(BankAccount[] accounts) {
+        System.out.println("\n-- All Account Details --");
+        for (BankAccount account : accounts) {
+            account.displayAccountDetails();
+            System.out.println("---------------------------");
+        }
+    }
+
+    public static void searchByAccountNumber(BankAccount[] accounts) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the account number to search: ");
+        int accountNumber = scanner.nextInt();
+        boolean accountFound = false;
+
+        for (BankAccount account : accounts) {
+            if (account.getAccountNumber() == accountNumber) {
+                account.displayAccountDetails();
+                accountFound = true;
+                break;
+            }
+        }
+
+        if (!accountFound) {
+            System.out.println("Account not found.");
+        }
+    }
+
+    public static void performDeposit(BankAccount[] accounts, Scanner scanner) {
+        System.out.print("Enter the account number to deposit: ");
+        int accountNumber = scanner.nextInt();
+        boolean accountFound = false;
+
+        for (BankAccount account : accounts) {
+            if (account.getAccountNumber() == accountNumber) {
+                System.out.print("Enter the deposit amount: $");
+                double amount = scanner.nextDouble();
+                account.deposit(amount);
+                accountFound = true;
+                break;
+            }
+        }
+
+        if (!accountFound) {
+            System.out.println("Account not found.");
+        }
+    }
+
+    public static void performWithdrawal(BankAccount[] accounts, Scanner scanner) {
+        System.out.print("Enter the account number to withdraw: ");
+        int accountNumber = scanner.nextInt();
+        boolean accountFound = false;
+
+        for (BankAccount account : accounts) {
+             if (account.getAccountNumber() == accountNumber) {
+                System.out.print("Enter the withdrawal amount: $");
+                double amount = scanner.nextDouble();
+                account.withdraw(amount);
+                accountFound = true;
+                break;
+            }
+        }
+
+        if (!accountFound) {
+            System.out.println("Account not found.");
+        }
+    }
+}
+
+OUTPUT:
+Enter the number of customers: 2
+Customer 1
+Enter account number: 123456
+Enter account holder name: person1
+Enter account type: savings
+Enter balance: $200000
+Customer 2
+Enter account number: 678910
+Enter account holder name: person2
+Enter account type: savings
+Enter balance: $540000
+
+
+-- Bank Menu --
+1. Display all account details
+2. Search by Account number
+3. Deposit amount
+4. Withdraw amount
+5. Exit
+Enter your choice: 3
+Enter the account number to deposit: 123456
+Enter the deposit amount: $1000
+Deposit successful. Current balance: 201000.0
+
+-- Bank Menu --
+1. Display all account details
+2. Search by Account number
+3. Deposit amount
+4. Withdraw amount
+5. Exit
+Enter your choice: 4
+Enter the account number to withdraw: 678910
+Enter the withdrawal amount: $40000
+Withdrawal successful. Current balance: 500000.0
+
+-- Bank Menu --
+1. Display all account details
+2. Search by Account number
+3. Deposit amount
+4. Withdraw amount
+5. Exit
+Enter your choice: 5

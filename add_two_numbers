@@ -1,0 +1,65 @@
+SOURCE CODE TO IMPLEMENT PROGRAM TO ADD TWO NUMBERS:
+package awtprograms;
+import java.awt.*;
+import java.net.*;
+import java.awt.event.*;
+public class AwtPrograms  extends Frame implements ActionListener {
+
+    /**
+     * @param args the command line arguments
+     */
+    Label l3;
+    TextField tf1;TextField tf2;
+    AwtPrograms(){
+        Frame f = new Frame("AWT Integer Addition");    
+        setTitle("Adder"); 
+        
+        //To add first text Box
+        Label l1 = new Label("Enter First Number:"); 
+        l1.setBounds(10, 50, 120, 20); 
+        f.add(l1);
+         tf1 = new TextField();
+        tf1.setBounds(150, 50, 85, 20);
+        f.add(tf1);
+        
+        //To add second Text Box
+        Label l2 = new Label("Enter Second Number:"); 
+        l2.setBounds(10, 80, 140, 20); 
+        f.add(l2);
+         tf2 = new TextField();
+        tf2.setBounds(150, 80, 85, 20);
+        f.add(tf2);
+        
+        Button b = new Button("Add"); 
+        b.setBounds(70, 120, 100, 30);
+        f.add(b);
+        
+        l3 = new Label(""); 
+        l3.setBounds(100, 150, 100, 20); 
+        f.add(l3);
+        
+        
+        b.addActionListener(this);  
+        
+        //TextField  tf2 = new TextField(); 
+        
+       // add(tf1);
+        f.setLayout(null);    
+        f.setSize(500,500); 
+        f.setVisible(true);
+        
+    }
+    public void actionPerformed(ActionEvent e){  
+            //l3.setText("Welcome to Javatpoint.");  
+            int a = Integer.parseInt(tf1.getText());
+            int b = Integer.parseInt(tf2.getText()); 
+            int c = a + b; 
+            l3.setText("Their sum is = " + String.valueOf(c)); 
+}  
+    public static void main(String[] args) {
+        // TODO code application logic here
+       AwtPrograms a1= new AwtPrograms();
+    }
+    
+}
+

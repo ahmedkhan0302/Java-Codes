@@ -1,0 +1,22 @@
+SOURCE CODE TO CREATE FRAME:
+package javaapplication8;
+import java.awt.*;
+import java.awt.event.*;
+public class JavaApplication8{
+
+    /**
+     * @param args the command line arguments
+     */
+    public JavaApplication8(){
+        Frame f1 = new Frame("My first Frame"); 
+        f1.setSize(210,250);
+        f1.setVisible(true);
+    }
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+        JavaApplication8 j1=new JavaApplication8();
+    }
+    
+}
+

@@ -1,0 +1,26 @@
+SOURCE CODE FOR BUTTON CLICK:
+package javaapplication18;
+import java.awt.*;
+import java.awt.event.*;
+public class JavaApplication18 extends Frame implements ActionListener{
+    Button myButton;
+
+  public JavaApplication18() {
+   
+    myButton = new Button("Click me");
+    add(myButton);
+    myButton.addActionListener(this);
+  }
+  
+  public void actionPerformed(ActionEvent e) {
+    System.out.println("Button clicked");
+  }
+    public static void main(String[] args) {
+        // TODO code application logic here
+        JavaApplication18 f = new JavaApplication18();
+      
+        f.setVisible(true);
+    }
+    
+}
+

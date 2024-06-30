@@ -1,0 +1,94 @@
+SOURCE CODE:
+package Multiple_inheritence_76;
+import java.util.Scanner;
+        class Student {
+            String studentName, courseName;
+            float sub1, sub2, sub3;
+            void getDetails() {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter Name: ");
+                studentName = sc.nextLine();
+                System.out.println("Enter Course Name: ");
+                courseName = sc.next();
+            }
+            void displayDetails() {
+                System.out.println("Student’s Name: "+studentName + "\n"+ "Course Name: "+courseName);
+            }
+            void getMarks() {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter Marks: ");
+                System.out.println("Maths: ");
+                sub1 = sc.nextFloat();
+                System.out.println("Science: ");
+                sub2 = sc.nextFloat();
+                System.out.println("English: ");
+                sub3 = sc.nextFloat();
+            }
+            void displayMarks() {
+                System.out.println("Maths Marks: "+sub1 + "\n"+ "Science Marks: "+sub2 + "\n"+ "English Marks: "+sub3);
+            }
+        }
+        interface Sports {
+            float sportsMarks = 10;
+            void displaySportsMarks();
+        }
+        class Result extends Student implements Sports {
+            float totalMarks, percentage;
+            void getTotalMarks() {
+                totalMarks = sub1 + sub2 + sub3 + sportsMarks;
+            }
+            void calcPerc() {
+                percentage = (totalMarks * 100) / 300;
+            }
+            @Override
+            public void displaySportsMarks() {
+                System.out.println("Sports Marks: "+sportsMarks);
+            }
+            void displayTotalMarks() {
+                System.out.println("Total marks: "+totalMarks);
+            }
+            void dispperc() {
+                System.out.println("Percentage : "+percentage +"%");
+            }
+            void displayResult() {
+                System.out.println(" RESULT: ");
+                displayDetails();
+                displayMarks();
+                displaySportsMarks();
+                getTotalMarks();
+                displayTotalMarks();
+                calcPerc();
+                dispperc();
+            }
+        }
+public class Multiple_Inheritence_76 {
+    public static void main(String[] args) {
+                Result s = new Result();
+                s.getDetails();
+                s.getMarks();
+                s.displayResult();
+           }    }
+
+
+OUTPUT:
+Enter Name: 
+Raj
+Enter Course Name: 
+IT
+Enter Marks: 
+Maths: 
+76
+Science: 
+89
+English: 
+90
+ RESULT: 
+Student’s Name: Raj
+Course Name: IT
+Maths Marks: 76.0
+Science Marks: 89.0
+English Marks: 90.0
+Sports Marks: 10.0
+Total marks: 265.0
+Percentage : 88.333336%
+

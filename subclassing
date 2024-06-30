@@ -1,0 +1,43 @@
+3)Sub-classing and imported class
+package javaapplication99;
+import java.util.*;
+import package_1.reverse_1;
+class java extends reverse_1{
+ Scanner s=new Scanner(System.in);
+ void rev(){
+ System.out.println("Enter the number: ");
+ int num=s.nextInt();
+ reverse(num); 
+ }
+ 
+ }
+public class javaapplication99{
+ public static void main(String[]args){
+ java s=new java();
+ s.rev();
+ 
+ }
+}
+//Package 1
+package package_1;
+public class reverse_1{
+ public void reverse(int num){
+ int rev=0;
+ int c;
+ int n=num;
+ while(num>0){
+ c=num%10;
+ rev=rev*10+c;
+ num=num/10; 
+ }
+ System.out.println("Reverse of "+n+" is: "+rev);
+ 
+ }
+ 
+}
+OUTPUT:
+run:
+Enter the number: 
+123456
+Reverse of 123456 is: 654321
+BUILD SUCCESSFUL (total time: 4 seconds)

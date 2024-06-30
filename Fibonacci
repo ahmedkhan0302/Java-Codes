@@ -1,0 +1,42 @@
+SOURCE CODE:
+package project2;
+                       
+import java.util.Scanner;
+public class Project2 {
+
+    public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+         System.out.print("Enter an integer: ");
+         int num = input.nextInt();
+         
+         int a,b,i,sum;
+         a=0;
+         b=1;
+         sum=0;
+         i=2;
+         
+         if(num==1){
+             System.out.print(a);
+         }
+         else if(num==2){
+             System.out.print(a+" "+b);
+         }
+         else{
+         System.out.print(a+" "+b);
+         while(i<=num){
+             sum=a+b;
+             System.out.print(" "+sum);
+             a=b;
+             b=sum;
+             i++;
+         }
+         }
+         
+         input.close();
+    }
+}
+
+
+OUTPUT:
+Enter an integer: 6
+0 1 1 2 3 5 8

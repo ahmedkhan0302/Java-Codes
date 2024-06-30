@@ -1,0 +1,28 @@
+1) Creating a package and a class 
+CODE:
+package maths_4;
+import package_maths.add;
+public class maths_4 {
+ 
+ public static void main(String[] args) {
+ 
+ add code1=new add();
+ code1.display1();
+ 
+ }
+ 
+}
+//Package 1
+package package_maths;
+public class add {
+ int a=5,b=6;
+ int c=a+b;
+public void display1()
+ {
+ System.out.println("The result after addition is " +c);
+ }
+}
+OUTPUT:
+run:
+The result after addition is 11
+BUILD SUCCESSFUL (total time: 0 seconds)
